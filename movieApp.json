@@ -1,3 +1,15 @@
 {
-  "url": "https://movieapplication-35l4.onrender.com"
+  "url": "https://movieapplication-35l4.onrender.com",
+
+  "endpoints": {
+    "login": "/login",
+    "register": "/register",
+    "addMovie": "/addMovie",
+    "getAllMovies": "/getMovies",
+    "getMovieById": "/getMovie/:id",
+    "updateMovie": "/updateMovie/:id",
+    "deleteMovie": "/deleteMovie/:id",
+    "addMovieComment": "/addComment/:id",
+    "getMovieComments": "/getComments/:id"
+  }
 }
