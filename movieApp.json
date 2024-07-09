@@ -1,0 +1,82 @@
+Objective: ExpressJS API - Movie Application and Management System.
+
+1. What is the main objective of the project?
+	- ExpressJS API - Movie Application and Management with Simple CRUD functionalities.
+
+2. Who are the target users of the application?
+	- Registred Users and Admin.
+
+3. What are the core features or functionalities required?
+
+	- Basic CRUD operations for managing movie in the catalog (Create, Read, Update, Delete).
+		- Authenticated user ability to retrieve a list of all movies in the catalog.
+        - Authenticated user ability to retrieve a single movie in the catalog.
+		- Authenticated Admin user ability to add a new movie in the catalog.
+		- Authenticated Admin user to update an existing movie.
+		- Authenticated Admin to delete a movie in the catalog.
+
+4. What data will the application need to store and manage?
+
+	- Movie
+		- title
+		- director
+		- year
+        - description
+        - genre
+        - comments
+
+	- User information 
+		- email
+		- password
+		- isAdmin
+
+5. Are there any specific technical requirements or constraints?
+
+	- Express.js API.
+	- MongoDB with Mongoose for data storage and management.
+	- RESTful Architecture.
+
+6. What are the security and authentication requirements?
+
+	- Token-based Authentication (JWT).
+	- Brcypt hash
+
+7. What are your routes and controllers?
+
+	Routes:
+
+	User Routes:
+
+	POST /users/login - User login route.
+	POST /users/register - User registration route.
+
+    Movie Routes:
+
+	GET /movies/getMovies - Retrieve a list of all the movies in the catalog.
+	POST /movies/addMovie - Add a new movie.
+	GET /movies/getMovie/:id - Retrieve a specific movie by its ID.
+    GET /movies/getComments/:id - Retrieve a specific comment by its ID.
+    PATCH /movies/addComment/:id - Add a new comment in the movie by its id.
+	PATCH /movies/updateMovie/:id - Update an existing movie.
+	DELETE /movies/deleteMovie/:id - Delete a movie by its ID.
+
+Controllers:
+
+	User Controller:
+
+	loginUser
+	registerUser
+
+    Inventory Controller:
+
+	getAllMovies
+	getMovie
+	addMovie
+    addComment
+	updateMovie
+	deleteMovie
+    getComments
+
+    Admin User: Email: admin@mail.com, Password: '12345678'
+
+    
