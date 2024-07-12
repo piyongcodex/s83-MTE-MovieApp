@@ -25,10 +25,10 @@ module.exports.getAllMovies = (req, res) => {
       if (movies.length > 0) {
         return res.status(200).send({ movies });
       } else {
-        return res.status(200).send({ message: "No items found." });
+        return res.status(200).send({ message: "No movioe found." });
       }
     })
-    .catch((err) => res.status(500).send({ error: "Error finding items." }));
+    .catch((err) => res.status(500).send({ error: "Error finding movie." }));
 };
 module.exports.getMovie = (req, res) => {
   return Movie.findById(req.params.id)
@@ -79,11 +79,11 @@ module.exports.updateMovie = (req, res) => {
   return Movie.findByIdAndUpdate(req.params.id, movieUpdates)
     .then((updatedMovie) => {
       if (!updatedMovie) {
-        return res.status(404).send({ error: "Item not found" });
+        return res.status(404).send({ error: "Movie not found" });
       }
 
       return res.status(200).send({
-        message: "Workout updated successfully",
+        message: "Movie updated successfully",
         updatedMovie: updatedMovie,
       });
     })
@@ -96,7 +96,7 @@ module.exports.deleteMovie = (req, res) => {
   return Movie.deleteOne({ _id: req.params.id })
     .then((deletedResult) => {
       if (deletedResult < 1) {
-        return res.status(400).send({ error: "No Item deleted" });
+        return res.status(400).send({ error: "No Movie deleted" });
       }
 
       return res.status(200).send({
