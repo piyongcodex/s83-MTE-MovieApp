@@ -4,6 +4,15 @@ const User = require("../models/User");
 const bcrypt = require("bcryptjs");
 const auth = require("../auth");
 
+module.exports.getDetails = (req, res) => {
+  console.log(req.user.id);
+  return User.findById(req.user.id).then((user) => {
+    if (!user) {
+      return res.status(404).send("User not found");
+    }
+    return res.status(200).send(user);
+  });
+};
 module.exports.registerUser = (req, res) => {
   // create a variable called "newUser" and instantiate a new "User" object using the "User" model
   let newUser = new User({
