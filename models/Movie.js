@@ -1,4 +1,3 @@
-// [SECTION] S42 Activity Solution
 const mongoose = require("mongoose");
 
 const movieSchema = new mongoose.Schema({
@@ -26,18 +25,21 @@ const movieSchema = new mongoose.Schema({
     type: String,
     required: [true, "Genre is required"],
   },
-  comments: [
-    {
-      userId: {
-        type: String,
-        required: [true, "UserId is required"],
+  comments: {
+    type: [
+      {
+        userId: {
+          type: String,
+          required: [true, "UserId is required"],
+        },
+        comment: {
+          type: String,
+          required: [true, "Comment is required"],
+        },
       },
-      comment: {
-        type: String,
-        required: [true, "Comment is required"],
-      },
-    },
-  ],
+    ],
+    default: [],
+  },
 });
 
 module.exports = mongoose.model("Movies", movieSchema);
