@@ -4,7 +4,7 @@
 const express = require("express");
 // use the "require" directive to load the mongoose module/package that allows us to create Schemas to model our data structure and manipulate our database
 const mongoose = require("mongoose");
-
+const cors = require("cors");
 // use the "require" directive to load the cors module/package that allows us our backend application to connect/be available for our frontend application
 // it allows us to control Cross Origin Resource Sharing of our application
 
@@ -23,7 +23,7 @@ app.use(express.json());
 // allows us to receive data/information in other data types aside from strings or arrays.
 app.use(express.urlencoded({ extended: true }));
 // allows all resources to access our backend application
-// app.use(cors());
+app.use(cors());
 
 // [SECTION] Database connection
 // connects our applicaion to our database
