@@ -27,7 +27,7 @@ const movieSchema = new mongoose.Schema({
   },
   imageUrl: {
     type: String,
-    default: "url",
+    required: [true, "Image URL is required"],
   },
   comments: {
     type: [
