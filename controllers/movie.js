@@ -16,7 +16,7 @@ module.exports.addMovie = (req, res) => {
     .then((savedMovie) => res.status(201).send(savedMovie))
     .catch((saveErr) => {
       console.error("Error in saving the movie: ", saveErr);
-      return res.status(500).send({ error: "Failed to save the movie" });
+      return res.status(500).send({ error: "Failed to save the movie", error });
     });
 };
 module.exports.getAllMovies = (req, res) => {
