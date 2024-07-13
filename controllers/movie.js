@@ -8,7 +8,7 @@ module.exports.addMovie = (req, res) => {
     year: req.body.year,
     description: req.body.description,
     genre: req.body.genre,
-    comments: req.body.comments,
+    imageUrl: req.body.imageUrl,
   });
 
   newMovie
