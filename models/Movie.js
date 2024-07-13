@@ -25,6 +25,10 @@ const movieSchema = new mongoose.Schema({
     type: String,
     required: [true, "Genre is required"],
   },
+  imageUrl: {
+    type: String,
+    required: [true, "Image URL is required"],
+  },
   comments: {
     type: [
       {
